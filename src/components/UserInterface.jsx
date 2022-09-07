@@ -8,8 +8,8 @@ export default function UserInterface() {
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
-    console.log(repos);
     getBest();
+    // eslint-disable-next-line
   }, [repos]);
 
   const handleClick = (input) => {
@@ -31,7 +31,6 @@ export default function UserInterface() {
       owner: owner,
       repo: repo,
     });
-    console.log(response);
     response.data.best = false;
     setRepos((repos) => [...repos, response.data]);
   }
@@ -39,7 +38,6 @@ export default function UserInterface() {
   function getBest() {
     let max = -1;
     for (const repo of repos) {
-      console.log("REPO", repo);
       max = repo.stargazers_count > max ? repo.stargazers_count : max;
     }
     for (const repo of repos) {
