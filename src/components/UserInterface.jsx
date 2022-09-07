@@ -37,7 +37,7 @@ export default function UserInterface() {
   }
 
   function getBest() {
-    let max = 0;
+    let max = -1;
     for (const repo of repos) {
       console.log("REPO", repo);
       max = repo.stargazers_count > max ? repo.stargazers_count : max;
