@@ -1,0 +1,92 @@
+#container {
+  margin-top: 50px;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+#appTitle {
+  margin-bottom: 10px;
+  font-size: 45px;
+}
+#btnSubmit {
+  padding: 7px;
+  border-radius: 4px;
+  color: white;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 1px, rgba(0, 0, 0, 0.23) 0px 1px 1px;
+  cursor: pointer;
+}
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cardContainer {
+  width: 300px;
+  padding: 22px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.cardLogo {
+  width: 60px !important;
+}
+.cardTitle {
+}
+.cardBody {
+  align-self: start;
+}
+.ratingDiv {
+  display: flex;
+  gap: 5px;
+  align-self: start;
+  align-items: center;
+}
+.rating {
+}
+.forksDiv {
+  display: flex;
+  gap: 5px;
+  align-self: start;
+  align-items: center;
+}
+.forks {
+}
+.btnDiv {
+  display: flex;
+  gap: 10px;
+}
+.btnRemove {
+  padding: 7px 11px;
+  color: white;
+  border-radius: 2px;
+  background-color: #fd5758;
+  cursor: pointer;
+}
+.btnVisit {
+  padding: 7px 11px;
+  color: white;
+  border-radius: 2px;
+  background-color: black;
+  cursor: pointer;
+}
+a,
+a:hover,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
