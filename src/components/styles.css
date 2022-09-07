@@ -1,5 +1,5 @@
 #container {
-  margin-top: 50px;
+  margin-top: 44px;
   height: 100%;
   width: 100%;
   min-height: 100vh;
@@ -16,9 +16,12 @@
   gap: 15px;
 }
 #appTitle {
-  margin-bottom: 10px;
-  font-size: 45px;
+  font-size: 55px;
   font-family: "Bebas Neue";
+}
+#inputSearch {
+  height: 30px;
+  padding-left: 7px;
 }
 #btnSubmit {
   padding: 7px;

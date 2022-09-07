@@ -51,7 +51,7 @@ export default function UserInterface() {
     <div id="container">
       <div id="header">
         <div id="appTitle">Compare Wars</div>
-        <input onKeyDown={(e) => (e.key === "Enter" ? handleClick(e.target.value) : null)} ref={inputRef} type="text" />
+        <input id="inputSearch" onKeyDown={(e) => (e.key === "Enter" ? handleClick(e.target.value) : null)} ref={inputRef} type="text" />
         <button id="btnSubmit" onClick={() => handleClick(inputRef.current.value)}>
           Add for Comparison
         </button>
