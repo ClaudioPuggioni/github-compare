@@ -5,6 +5,7 @@ import "./styles.css";
 export default function UserInterface() {
   const inputRef = useRef(null);
   const [repos, setRepos] = useState([]);
+  const [best, setBest] = useState(null);
 
   useEffect(() => {
     getBest();
@@ -41,8 +42,8 @@ export default function UserInterface() {
     for (const repo of repos) {
       max = repo.stargazers_count > max ? repo.stargazers_count : max;
     }
-    for (const repo of repos) {
-      repo.best = repo.stargazers_count === max ? true : false;
+    for (let index = 0; index < repos.length; index++) {
+      if (repos[index].stargazers_count === max) setBest(index);
     }
   }
 
@@ -67,7 +68,7 @@ export default function UserInterface() {
                 body={ele.description}
                 rating={ele.stargazers_count}
                 forks={ele.forks_count}
-                best={ele.best}
+                best={best}
                 repoLink={ele.owner.html_url}
                 handleDelete={handleDelete}
               />
