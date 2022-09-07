@@ -22,7 +22,7 @@ export default function Card({ idx, src, title, body, rating, forks, repoLink, b
         <div onClick={() => handleDelete(idx)} className="btnRemove">
           Remove
         </div>
-        <a href={repoLink} target="_blank">
+        <a href={repoLink} target="_blank" rel="noreferrer">
           <div className="btnVisit">Visit Repo</div>
         </a>
       </div>
