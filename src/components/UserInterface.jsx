@@ -24,7 +24,7 @@ export default function UserInterface() {
   };
 
   async function getRepo(owner, repo, page = 1) {
-    const URL = `https://api.github.com/users/${owner}/repos?per_page=30&page=${page}`;
+    const URL = `https://api.github.com/users/${owner}/repos?per_page=100&page=${page}`;
     let response = await fetch(URL);
     let data = await response.json();
     for (let index = 0; index < data.length; index++) {
