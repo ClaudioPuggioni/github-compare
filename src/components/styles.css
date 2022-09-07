@@ -45,8 +45,6 @@
 .cardLogo {
   width: 60px !important;
 }
-.cardTitle {
-}
 .cardBody {
   align-self: start;
 }
@@ -56,15 +54,11 @@
   align-self: start;
   align-items: center;
 }
-.rating {
-}
 .forksDiv {
   display: flex;
   gap: 5px;
   align-self: start;
   align-items: center;
-}
-.forks {
 }
 .btnDiv {
   display: flex;
