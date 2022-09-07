@@ -25,7 +25,7 @@ export default function UserInterface() {
 
   async function getRepo(owner, repo) {
     const octokit = new Octokit({
-      auth: "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",
+      auth: "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",
     });
     let response = await octokit.request(`GET /repos/${owner}/${repo}`, {
       owner: owner,
@@ -59,6 +59,7 @@ export default function UserInterface() {
           ? null
           : repos.map((ele, idx) => (
               <Card
+                key={`Repo${idx}`}
                 idx={idx}
                 src={ele.owner.avatar_url}
                 title={ele.full_name}
