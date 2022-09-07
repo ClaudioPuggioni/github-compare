@@ -25,7 +25,7 @@ export default function UserInterface() {
 
   async function getRepo(owner, repo) {
     const octokit = new Octokit({
-      auth: "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",
+      auth: "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",
     });
     let response = await octokit.request(`GET /repos/${owner}/${repo}`, {
       owner: owner,
