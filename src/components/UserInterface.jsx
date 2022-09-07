@@ -1,4 +1,3 @@
-import { Octokit } from "octokit";
 import React, { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 import "./styles.css";
@@ -23,16 +22,18 @@ export default function UserInterface() {
     setRepos(copyRepos);
   };
 
-  async function getRepo(owner, repo) {
-    const octokit = new Octokit({
-      auth: "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",
-    });
-    let response = await octokit.request(`GET /repos/${owner}/${repo}`, {
-      owner: owner,
-      repo: repo,
-    });
-    response.data.best = false;
-    setRepos((repos) => [...repos, response.data]);
+  async function getRepo(owner, repo, page = 1) {
+    const URL = `https://api.github.com/users/${owner}/repos?per_page=30&page=${page}`;
+    let response = await fetch(URL);
+    let data = await response.json();
+    for (let index = 0; index < data.length; index++) {
+      if (data[index].name === repo) {
+        data[index].best = false;
+        setRepos((repos) => [...repos, data[index]]);
+        break;
+      }
+      if (index === data.length - 1 && data[index].name !== repo) getRepo(owner, repo, page + 1);
+    }
   }
 
   function getBest() {
